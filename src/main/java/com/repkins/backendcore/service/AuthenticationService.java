@@ -21,7 +21,14 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
+
+    public boolean isUserAlreadyExists(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+
     public AuthenticationResponse register(UserDTO userDTO) {
+
         User user = User.builder()
                 .username(userDTO.getUsername())
                 .firstname(userDTO.getFirstname())

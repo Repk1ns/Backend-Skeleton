@@ -1,5 +1,6 @@
 package com.repkins.backendcore.controller;
 
+import com.repkins.backendcore.exception.UserAlreadyExistsException;
 import com.repkins.backendcore.model.auth.AuthenticationRequest;
 import com.repkins.backendcore.model.auth.AuthenticationResponse;
 import com.repkins.backendcore.model.dto.UserDTO;
@@ -20,6 +21,10 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(@RequestBody UserDTO userDTO) {
+
+        if(authenticationService.isUserAlreadyExists(userDTO.getUsername())) {
+            return ResponseEntity.badRequest().build();
+        }
 
         return ResponseEntity.ok(authenticationService.register(userDTO));
     }
