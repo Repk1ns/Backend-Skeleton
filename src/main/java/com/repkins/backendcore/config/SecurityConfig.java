@@ -65,6 +65,7 @@ public class SecurityConfig {
         http.cors(c -> c.configurationSource((req -> {
             CorsConfiguration conf = new CorsConfiguration();
             conf.setAllowedMethods(List.of("*"));
+            conf.setAllowedOrigins(List.of("*"));
 
             return conf;
         })));
