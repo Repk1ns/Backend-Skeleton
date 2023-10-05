@@ -10,8 +10,9 @@
 	</parent>
 	<groupId>com.repkins</groupId>
 	<artifactId>backendcore</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2.0</version>
 	<name>backendcore</name>
+	<packaging>jar</packaging>
 	<description>Core Backend for WebApps</description>
 	<properties>
 		<java.version>17</java.version>

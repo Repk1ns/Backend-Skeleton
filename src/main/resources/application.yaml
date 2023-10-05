@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/backendcore
-    username: vojta
-    password: vojta.m
+    url: jdbc:postgresql://localhost:5432/postgre
+    username: root
+    password: root
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql
