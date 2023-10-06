@@ -66,6 +66,8 @@ public class SecurityConfig {
             CorsConfiguration conf = new CorsConfiguration();
             conf.setAllowedMethods(List.of("*"));
             conf.setAllowedOrigins(List.of("*"));
+            conf.addAllowedHeader("Authorization");
+            conf.addAllowedHeader("Content-Type");
 
             return conf;
         })));
