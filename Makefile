@@ -2,7 +2,7 @@ package:
 	./mvnw package -DskipTests
 	docker build -t backendcore -f Dockerfile .
 
-run: package
+run:
 	docker run --name backendcore -d -p 8080:8080 backendcore
 
 test:
@@ -19,3 +19,6 @@ clean:
 	docker container stop backendcore
 	docker container rm backendcore
 	./mvnw clean
+
+logs:
+	docker container logs backendcore
